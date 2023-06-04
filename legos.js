@@ -19,8 +19,22 @@ function LegoPile() {
     "white": new BST(),
   }
   this.insert = insert;
+  this.hasBrick = hasBrick;
 }
 
 function insert(Brick) {
   this.dictionary[Brick.color].insert(Brick);
+}
+
+function hasBrick(size, color) {
+  var current = this.root;
+  while (current.color && current.size != size && color) {
+    if (size < current.size) {
+      current = current.left;
+    }
+    else {
+      current = current.right;
+    }
+  }
+  return current;
 }
