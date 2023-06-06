@@ -12,7 +12,7 @@ describe("LegoPile", function() {
     var bst = new BST();
     pile.insert(sampleLego);
 
-    it('Checking Pile if Has Brick', function() {
+    it('Checking Pile if Has Brick that isn\'t added', function() {
       var sampleLegoGreen = new Brick(5, "green");
       pile.insert(sampleLegoGreen);
       var sampleLegoBlue = new Brick(5, "blue");
@@ -23,7 +23,7 @@ describe("LegoPile", function() {
       pile.insert(sampleLegoBlack);
       var sampleLegoWhite = new Brick(5, "white");
       pile.insert(sampleLegoWhite);
-      assert.equal(sampleLego, pile.hasBrick(4, "orange"));
+      assert.equal(false, pile.hasBrick(4));
     });
 
 });

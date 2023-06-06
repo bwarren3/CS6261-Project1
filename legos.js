@@ -28,13 +28,15 @@ function insert(Brick) {
 
 function hasBrick(size, color) {
   var current = this.root;
-  while (current.color && current.size != size && color) {
+  while (current) {
+    if (size === current.size) {
+      return true;
+    }
     if (size < current.size) {
       current = current.left;
-    }
-    else {
+    } else {
       current = current.right;
     }
   }
-  return current;
+  return false;
 }
