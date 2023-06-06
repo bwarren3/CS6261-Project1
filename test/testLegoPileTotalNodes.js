@@ -13,7 +13,7 @@ describe("LegoPile", function() {
     pile.insert(sampleLego);
     bst.insert(sampleLego);
 
-    it('Checking for has brick that isn\'t added', function() {
+    it('Checking for total number of nodes in LegoPile', function() {
       var sampleLegoGreen = new Brick(5, "green");
       pile.insert(sampleLegoGreen);
       bst.insert(sampleLegoGreen);
@@ -29,7 +29,7 @@ describe("LegoPile", function() {
       var sampleLegoWhite = new Brick(5, "white");
       pile.insert(sampleLegoWhite);
       bst.insert(sampleLegoWhite);
-      assert.equal(false, pile.hasBrick(4));
+      assert.equal(6, pile.bstNumberCount(bst.root));
     });
 
 });
